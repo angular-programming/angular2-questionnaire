@@ -1,0 +1,31 @@
+.question-controls li{
+	list-style-type: none;
+	border:none;
+}
+
+.question-controls li.list-group-item{
+	border-bottom: 1px solid #ccc;
+}
+
+.question-controls li a{
+	background-repeat: no-repeat;
+	padding-left: 24px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.icon-text {
+	background-image: url(./assets/img/edit/text.png);
+}
+
+.icon-star {
+	background-image: url(./assets/img/edit/star.png);
+}
+
+.icon-radio {
+	background-image: url(./assets/img/edit/radio.png);
+}
+
+.icon-checkbox {
+	background-image: url(./assets/img/edit/checkbox.png);
+}

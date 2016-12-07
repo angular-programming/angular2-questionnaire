@@ -1,0 +1,12 @@
+<nav class="nav navbar-nav">
+  <a [routerLink]="['/']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">首页</a>
+  <a [routerLink]="['/admin/center']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">我的问卷</a>
+  <a [routerLink]="['/admin/about']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">帮助</a>
+</nav>
+<nav class="nav navbar-right">
+  <a [routerLink]="['/admin/edit/0']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">创建新问卷</a>
+  <a [hidden] = "userService.isLogin" [routerLink]="['/admin/register']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">注册</a>
+  <a [routerLink]="['/admin/login']" [routerLinkActive]="['router-link-active']" [hidden]="userService.isLogin" [routerLinkActiveOptions]="{exact:true}">登录</a>
+  <a> {{ userService?.userInfo?.username }} </a>
+  <a [hidden] = "!userService.isLogin" (click)="logout()">注销</a>
+</nav>

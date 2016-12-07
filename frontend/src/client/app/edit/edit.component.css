@@ -1,0 +1,8 @@
+.questionnaire-container{
+    background-color: #f0f0f0;
+    min-height: 800px;
+}
+
+.edit-container .sidebar{
+    padding:20px;
+}

@@ -1,0 +1,17 @@
+<div class="row edit-container">
+    <div class="col-lg-3">
+        <div class="sidebar">
+            <tabset type="tabs">
+                <tab heading="问题控件">
+                    <question-select (addQuestionRequest)="onAddQuestion($event)"></question-select>
+                </tab>
+                <tab heading="问卷大纲">
+                    <questionnaire-outline [questionnaire]="questionnaire"></questionnaire-outline>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+    <div class="col-lg-9 questionnaire-container">
+      <questionnaire [(questionnaire)]="questionnaire" (submitQuestionnaire)="onSubmitQuestionniare($event)"></questionnaire>
+    </div>
+</div>

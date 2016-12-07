@@ -1,0 +1,26 @@
+<div>
+    <div *ngIf="!registered">
+      <h2>注册</h2>
+      <form (ngSubmit)="register()" [formGroup]="form" class="form-group">
+
+        <div *ngFor="let field of fields" class="form-row">
+          <field [field]="field" [form]="form"></field>
+        </div>
+
+        <div class="form-row form-checkbox">
+          <input type="checkbox" id="showPassword" (click)="showPassword()">
+          <label for="showPassword">显示密码</label>
+        </div>
+
+        <div class="form-row text-center">
+          <button type="submit" class="btn btn-default btn-lg" [disabled]="!form.valid">提交</button>
+          <button type="reset" class="btn btn-default btn-lg" (click)="resetForm()">重置</button>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="registered">
+      <alert [type]="alert.type" dismissible="true" >
+          {{ alert?.msg }}
+      </alert>
+    </div>
+</div>

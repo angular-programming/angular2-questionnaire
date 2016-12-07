@@ -1,0 +1,39 @@
+<p>复选题</p>
+<div *ngIf="!editable">
+    <p>{{question.title}}</p>
+    <div *ngFor="let option of question.options" class="radio">
+        <label>
+            <input name="group" type="checkbox" id="{{option.key}}"
+                (click)="setSelectedValue($event.target.checked, option.value)">{{option.value}}
+        </label>
+    </div>
+</div>
+<div *ngIf="editable && isEditing">
+    <input placeholder="请输入问题" [(ngModel)]="question.title" class="form-control" required />
+    <div class="row pt-20" *ngFor="let option of question.options; let i=index">
+            <div class="col-lg-10">
+                <input placeholder="请填写选项" class="form-control" class="form-control" [(ngModel)]="option.value" type="text" />
+            </div>
+            <div class="col-lg-2">
+                <span *ngIf="question.options.length > 1" class="del-icon" (click)="onDeleteOption(i)">X</span>
+            </div>
+        </div>
+    <div class="btns">
+        <button (click)="onSave()" class="btn btn-default">保存</button>
+        <button (click)="onAddOption()" class="btn btn-default">添加选项</button>
+        <button (click)="onCancel()" class= "btn btn-default">取消</button>
+    </div>
+</div>
+<div *ngIf="editable && !isEditing">
+    <p>{{question.title}}</p>
+    <div *ngFor="let option of question.options" class="radio disabled">
+        <label>
+            <input name="group" type="checkbox" id="{{option.key}}"
+                disabled="disabled">{{option.value}}
+        </label>
+    </div>
+   <div class="btns">
+    <button (click)="onEdit()" class="btn btn-default">编辑</button>
+    <button (click)="onDelete()" class= "btn btn-default">删除</button>
+  </div>
+</div>

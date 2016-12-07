@@ -1,0 +1,19 @@
+.questionnaire-container{
+    padding:30px;
+    background-color: #fff;
+    margin-top:20px;
+}
+
+.questionnaire-container .btn-primary{
+    width: 120px;
+}
+
+.questionnaire ul li {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.questionnaire{
+    margin-bottom: 30px;
+}

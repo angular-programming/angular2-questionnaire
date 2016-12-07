@@ -1,0 +1,28 @@
+<div [formGroup]="form" >
+  
+  <label [attr.for]="field.key">{{field.label}}</label>
+
+  <div [ngSwitch]="field.controlType">
+
+    <div  *ngSwitchCase="'text'">
+          <input  [formControlName]="field.key" [id]="field.key" [type]="field.type" class="form-control">
+    </div>
+
+    <div *ngSwitchCase="'radio'" class="radio-row">
+      <label *ngFor="let item of field.items">
+        <input [formControlName]="field.key" [type]="field.type"
+          (click)="field.value = item.value"
+          [checked]="item.value === field.value">
+        <span class="label-text">{{item.name}}</span>
+      </label>
+    </div>
+
+    <select [id]="field.key" *ngSwitchCase="'select'" [formControlName]="field.key">
+      <option *ngFor="let opt of field.options"  [value]="opt.key">{{opt.value}}</option>
+    </select>
+
+  </div>
+
+  <div class="errorMessage" *ngIf="!isEmpty && !isValid">{{field.label}}格式不正确</div>
+  <div class="tipsMessage" *ngIf="isEmpty">请填写{{field.label}}</div>
+</div>

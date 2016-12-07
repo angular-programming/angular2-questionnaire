@@ -1,0 +1,12 @@
+.center-container{
+    padding:20px;
+}
+
+.center-container .show-empty{
+    width: 360px;
+    margin: 0 auto;
+    height: 260px;
+    text-align: center;
+    padding-top: 200px;
+    background: url(./assets/img/notfound.png) no-repeat center center;
+}

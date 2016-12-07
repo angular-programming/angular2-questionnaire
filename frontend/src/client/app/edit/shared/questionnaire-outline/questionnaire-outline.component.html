@@ -1,0 +1,5 @@
+ <ul *ngIf="questionnaire" class="questionnaire-outline">
+    <li *ngFor="let q of questionnaire.questionList; let i=index">
+      <span>{{(i + 1) + ". " + q.title}}</span>
+    <li>
+  </ul>

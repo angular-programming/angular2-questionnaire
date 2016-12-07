@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  padding: 0 16px;
+
+}
+.login-title {
+  color: #337ab7;
+}
+
+.home .slide-image {
+  text-align: center;
+}
+
+.hero-title {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.hero-title span {
+  color: green;
+  font-size: 22px;
+}
+
+.hero-title a {
+  margin-left: 80px;
+  width: 250px;
+}
+
+.carousel-indicators li {
+  margin: 1px 5px;
+}
+
+

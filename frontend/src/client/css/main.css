@@ -1,0 +1,63 @@
+/* Reset */
+html,
+body,
+div {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Sans GB","Microsoft Yahei",arial,\5b8b\4f53,"Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+
+/* Box-sizing border-box */
+* {
+  box-sizing: border-box;
+}
+
+/* Set up a default font and some padding to provide breathing room */
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+ul {
+  margin: 10px 0 0;
+  padding: 0 0 0 20px;
+}
+
+li {
+  font-weight: 400;
+  margin-top: 4px;
+  list-style: none;
+}
+
+.btns{
+  padding:10px 0;
+}
+
+.pt-20{
+  padding-top:20px;
+}
+
+.del-icon{
+  padding: 5px 0;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.carousel-indicators li,.carousel-indicators .active {
+  margin-left: 10px !important;
+}
+
+.carousel-control .icon-next,.carousel-control .icon-prev {
+  font-size: 50px !important;
+}

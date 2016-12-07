@@ -1,0 +1,37 @@
+<div *ngIf="questionnaire" class="questionnaire-container">
+    <div class="questionnaire">
+        <h1 *ngIf="!editable" class="text-center">{{questionnaire.title}}</h1>
+        <h1 *ngIf="editable" class="text-center">
+            <input placeholder="问卷标题" class="form-control" [(ngModel)]="questionnaire.title"/>
+        </h1>
+        <p *ngIf="!editable" class="text-center">{{questionnaire.starter}}</p>
+        <p *ngIf="editable" class="text-center">
+            <input placeholder="开头欢迎语" class="form-control" [(ngModel)]="questionnaire.starter"/>
+        </p>
+        <ul>
+            <li *ngFor="let q of questionnaire.questionList; let i=index" [ngSwitch]="q.type">
+                <label>第{{i+1}}题：</label>
+                <div *ngSwitchCase="0">
+                    <question-text [question]="q" [editable]="editable" (deleteQuestionRequest)="onDeleteQuestion(i)"></question-text>
+                </div>
+                <div *ngSwitchCase="1">
+                    <question-radio [question]="q" [editable]="editable" (deleteQuestionRequest)="onDeleteQuestion(i)"></question-radio>
+                </div>
+                <div *ngSwitchCase="2">
+                <question-checkbox [question]="q" [editable]="editable" (deleteQuestionRequest)="onDeleteQuestion(i)"></question-checkbox>
+                </div>
+                <div *ngSwitchCase="3">
+                    <question-score [question]="q" [editable]="editable" (deleteQuestionRequest)="onDeleteQuestion(i)"></question-score>
+                </div>
+            </li>
+        </ul>
+        <p *ngIf="!editable" class="text-center">{{questionnaire.ending}}</p>
+        <p *ngIf="editable" class="text-center">
+            <input placeholder="结尾感谢语" class="form-control" [(ngModel)]="questionnaire.ending"/>
+        </p>
+    </div>
+    <div class="text-center"> 
+    <button type="button" class="btn btn-primary" [style.display]="questionnaire.state == 2 ? 'none':'inline'" 
+        (click)="onSubmit()">提交</button>
+    </div>
+</div>

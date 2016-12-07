@@ -1,0 +1,15 @@
+<div class="sd-help">
+    <accordion>
+       <accordion-group *ngFor="let item of items"
+        [isOpen]="item.open" [heading]="item.text">
+          <div class="row">
+            <div class="col-lg-3">
+              <img [src]="item.icon" alt="{{item.text}}">
+            </div>
+            <div class="col-lg-9">
+              {{ item?.desc }}
+            </div>
+          </div>
+       </accordion-group>
+     </accordion>
+</div>

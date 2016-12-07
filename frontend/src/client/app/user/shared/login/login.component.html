@@ -1,0 +1,13 @@
+<div>
+  <h2><span class="login-title">登录</span></h2>
+    <div>
+      <form (ngSubmit)="login()" [formGroup]="form" class="form-group">
+        <div *ngFor="let field of fields" class="form-row">
+          <field [field]="field" [form]="form"></field>
+        </div>
+        <div class="form-row text-center">
+          <button type="submit" class="btn btn-default btn-lg" [disabled]="!form.valid">登录</button>
+        </div>
+      </form>
+    </div>
+</div>

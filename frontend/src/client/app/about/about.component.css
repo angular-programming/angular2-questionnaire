@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  padding: 16px;
+}
+
+accordion-group .col-lg-3 {
+  text-align: center;
+}

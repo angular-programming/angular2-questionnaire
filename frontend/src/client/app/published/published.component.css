@@ -1,0 +1,8 @@
+.published-container{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.published-container .questionnaire-container{
+    background: #ccc !important;
+}

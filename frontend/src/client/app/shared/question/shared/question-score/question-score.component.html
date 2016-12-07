@@ -1,0 +1,29 @@
+<p>分值题</p>
+
+<div *ngIf="!editable">
+  <p>{{question.title}}</p>
+  <p class="range-field">
+      <label>分值：{{question.answer}}</label>
+      <input type="range" [(ngModel)]="question.answer" min="0" max="100" />
+  </p>
+</div>
+
+<div *ngIf="editable && isEditing">
+  <input placeholder="请输入问题" class="form-control" [(ngModel)]="question.title" required />
+  <div class="btns">
+    <button (click)="onSave()" class="btn">保存</button>
+    <button (click)="onCancel()" class= "btn">取消</button>
+  </div>
+</div>
+
+<div *ngIf="editable && !isEditing">
+  <p>{{question.title}}</p>
+  <p class="range-field">
+      <label>分值：50</label>
+      <input type="range" vaule="50" min="0" max="100" disabled="disabled" />
+  </p>
+  <div class="btns">
+    <button (click)="onEdit()" class="btn btn-default">编辑</button>
+    <button (click)="onDelete()" class= "btn btn-default">删除</button>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<sd-navbar></sd-navbar>
+<div class="row">
+<div class="home">
+  <carousel>
+    <slide *ngFor="let slidez of slides; let index=index"
+           [active]="slidez.active">
+      <div class="slide-image">
+        <img [src]="slidez.image">
+      </div>
+
+      <div class="carousel-caption">
+        <p>{{slidez.text}}</p>
+      </div>
+    </slide>
+  </carousel>
+
+  <section>
+    <h2 class="hero-title ">
+      <span>10,145,267</span>个用户正在使用
+        <a  class="btn btn-success btn-lg" [routerLink]="['/admin/edit/0']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">创建新问卷</a>
+    </h2>
+  </section>
+  <div class="divider"></div>
+</div>
+</div>
+
+
+
+
+
