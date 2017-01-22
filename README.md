@@ -14,18 +14,19 @@
 
 ## 如何上手
 
-调查问卷项目包括前端 frontend 目录以及后端 backend 目录。我们可以先运行后端服务，方便前端的注册与登录用户以及提供问卷相关的服务。安装过 Node.js 之后，在终端运行以下命令：
+调查问卷项目包括前端 frontend 目录以及后端 backend 目录。我们可以先运行后端服务，方便前端的注册与登录用户以及提供问卷相关的服务。安装过 Node.js 之后（确保你的 Node.js 版本为 6.x 及以上），在终端运行以下命令：
 
 ```bash
 cd backend
 npm install
-node app.js
+node app
 ```
 
 接下来，将终端目录定位 frontend 之中，再运行以下命令：
 
 ```bash
 npm install
+npm start
 ```
 
-接着使用 `npm start` 即可运行整个项目代码。
+以上前后台的命令都执行完后，即成功启动整个项目应用。
