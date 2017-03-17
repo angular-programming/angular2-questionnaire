@@ -1,7 +1,7 @@
 import { join } from 'path';
 
 import { SeedConfig } from './seed.config';
-// import { ExtendPackages } from './seed.config.interfaces';
+import { ExtendPackages } from './seed.config.interfaces';
 
 /**
  * This class extends the basic seed configuration, allowing for project specific overrides. A few examples can be found
@@ -21,8 +21,8 @@ export class ProjectConfig extends SeedConfig {
 
     // Add `NPM` third-party libraries to be injected/bundled.
     this.NPM_DEPENDENCIES = [
-      ...this.NPM_DEPENDENCIES,
-      {src: 'ng2-bootstrap/bundles/ng2-bootstrap.umd.min.js', inject: 'libs'}
+      ...this.NPM_DEPENDENCIES
+      //{src: 'ng2-bootstrap/bundles/ng2-bootstrap.umd.min.js', inject: 'libs'}
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
     ];
@@ -47,18 +47,22 @@ export class ProjectConfig extends SeedConfig {
     //
     // or
     //
-    // let additionalPackages: ExtendPackages[] = [];
-    //
-    // additionalPackages.push({
-    //   name: 'lodash',
-    //   path: `${this.APP_BASE}node_modules/lodash/lodash.js`,
-    //   packageMeta: {
-    //     main: 'index.js',
-    //     defaultExtension: 'js'
-    //   }
-    // });
-    //
-    // this.addPackagesBundles(additionalPackages);
+    let additionalPackages: ExtendPackages[] = [
+      // required for dev build 
+      {
+        name:'ng2-bootstrap',
+        path:'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.min.js'
+      },    
+
+      // required for prod build
+      {
+        name:'ng2-bootstrap/*',
+        path:'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.min.js'
+      }
+    ];
+  
+
+   this.addPackagesBundles(additionalPackages);
 
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
