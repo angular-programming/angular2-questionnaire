@@ -1,5 +1,9 @@
 # Angular 2 调查问卷示例项目
 
+### 注意：新版本（Angular 4 + Angular CLI）已迁移至新repo
+
+https://github.com/angular-programming/angular-questionnaire
+
 ### 这是由广发证券互联网金融技术团队出品的原创书籍《揭秘 Angular 2》的第三部分项目实战的源代码。
 
 ![揭秘 Angular 2 封面](./angular_programming.jpg)
